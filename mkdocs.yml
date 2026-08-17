@@ -1,7 +1,7 @@
 site_name: Brin's Wathe 百科
-site_description: brinswathe（b-w）模组 Wiki —— BRIN 列车专属角色/机制/配置百科
-site_url: https://YOUR_USERNAME.github.io/brinswathe-wiki/
-repo_url: https://github.com/YOUR_USERNAME/brinswathe-wiki
+site_description: BrinsWathe 模组 Wiki —— BRIN 列车专属角色/机制/配置百科
+site_url: https://ErinDax.github.io/brinswathe-wiki/
+repo_url: https://github.com/ErinDax/brinswathe-wiki
 repo_name: brinswathe-wiki
 
 theme:

@@ -2,6 +2,8 @@
 
 Brin's Wathe（b-w）模组 Wiki —— MkDocs Material + GitHub Pages 自动部署。
 
+© 2026 ErinDax · Brin's Wathe 百科以 [CC BY-SA 4.0](LICENSE) 许可。
+
 ## 本地预览（可选，需 Python）
 
 ```bash
