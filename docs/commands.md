@@ -1,10 +1,11 @@
 # 命令
 
-b-w 注册的命令（`BrinsWathe` 主类 L1035+）：
+/brinswathe reload 直接在游戏内应用配置，无需重启服务器
 
-!!! note "建设中"
-    - **`/brin config ...`**（`BrinConfigCommand`）——配置文件相关命令
-    - **`/brin speed ...`**（`SetBrinSpeedCommand`）——张师（zhangshi）跑速设置等
-    - 客户端命令（`BrinsWatheClient` L166）——客户端专属设置
+/brinswathe afk on/off 开启或关闭挂机踢出功能
 
-    子命令/参数/用途详细后补。
+/setbrinspeed <player> <type> <value> 来调整耐力和奔跑速度
+参数描述
+maxStamina 最大耐力（范围：1–1000，默认：150）
+runSpeed 速度乘数（范围：0.0–10.0，默认：0.1）
+regenRate 耐力回复率（范围：0–100，默认：每秒2）
