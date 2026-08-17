@@ -34,10 +34,32 @@ plugins:
 nav:
   - 简介: index.md
   - 角色:
-    - 平民阵营: roles/civilian.md
-    - 杀手中立阵营: roles/killer-neutral.md
-    - 独立中立阵营: roles/independent-neutral.md
-    - 杀手阵营: roles/killer.md
+    - 平民阵营:
+      - 替身演员: roles/civilian/stunt_double.md
+      - 灵媒: roles/civilian/medium.md
+      - 接线员: roles/civilian/eavesdropper.md
+      - 生存专家: roles/civilian/watchman.md
+      - 档案员: roles/civilian/archivist.md
+      - 复仇者: roles/civilian/avenger.md
+      - 变态: roles/civilian/stalker.md
+      - 牛仔: roles/civilian/cowboy.md
+    - 杀手阵营:
+      - 傀儡师: roles/killer/puppeteer.md
+      - 捕兽者: roles/killer/beast_trapper.md
+      - 幻术师: roles/killer/illusionist.md
+      - 狙击手: roles/killer/sniper.md
+      - 拾骨师: roles/killer/boneharvester.md
+      - 炸弹客: roles/killer/bomber.md
+      - 张师: roles/killer/zhangshi.md
+      - 入殓师: roles/killer/mortician.md
+    - 杀手中立阵营:
+      - 赎罪者: roles/killer-neutral/penitent.md
+      - 恐怖分子: roles/killer-neutral/terrorist.md
+    - 独立中立阵营:
+      - 梦魇: roles/independent-neutral/nightmare.md
+      - 狂战士: roles/independent-neutral/berserker.md
+      - 代偿者: roles/independent-neutral/compensator.md
+      - 赌徒: roles/independent-neutral/gambler.md
   - 配置:
     - 可配置项: config.md
     - 命令: commands.md
