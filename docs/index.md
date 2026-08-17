@@ -29,3 +29,9 @@
 
 - wathe-b（基础模组）
 - kinswathe（猎刀角色，b-w 与 kinswathe 联动——如 HACKER 判定）
+
+## 内容来源与许可
+
+- 角色/机制内容整理自 **brinswathe**（MIT License，© 2026 百家）
+- wathe 相关机制为描述性整理，未复制原版文本（wathe © 2024 doctor4t，All Rights Reserved）
+- 本百科 © 2026 ErinDax，以 [CC BY-SA 4.0](LICENSE) 许可发布

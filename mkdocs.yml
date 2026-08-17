@@ -1,5 +1,5 @@
 site_name: Brin's Wathe 百科
-site_description: BrinsWathe 模组 Wiki —— BRIN 列车专属角色/机制/配置百科
+site_description: brinswathe（b-w）模组 Wiki —— BRIN 列车专属角色/机制/配置百科
 site_url: https://ErinDax.github.io/brinswathe-wiki/
 repo_url: https://github.com/ErinDax/brinswathe-wiki
 repo_name: brinswathe-wiki
@@ -17,6 +17,9 @@ theme:
       primary: indigo
       accent: indigo
 
+extra_css:
+  - stylesheets/extra.css
+
 markdown_extensions:
   - admonition
   - tables
@@ -29,10 +32,14 @@ plugins:
   - search
 
 nav:
-  - 首页: index.md
-  - 模组简介: about.md
-  - 角色: roles.md
-  - 商店: shop.md
-  - 配置: config.md
-  - 命令: commands.md
-  - 机制: mechanisms.md
+  - 简介: index.md
+  - 角色:
+    - 平民阵营: roles/civilian.md
+    - 杀手中立阵营: roles/killer-neutral.md
+    - 独立中立阵营: roles/independent-neutral.md
+    - 杀手阵营: roles/killer.md
+  - 配置:
+    - 可配置项: config.md
+    - 命令: commands.md
+    - 机制: mechanisms.md
+  - 更新内容: changelog.md
