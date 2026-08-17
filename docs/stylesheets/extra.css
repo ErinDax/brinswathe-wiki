@@ -1,5 +1,6 @@
-/* Brin's Wathe Wiki —— 主题色改为绿色 #3a8262（覆盖 Material 默认蓝色 indigo） */
-:root {
+/* Brin's Wathe Wiki —— 主题色改为绿色 #3a8262（覆盖 Material 默认蓝色 indigo）
+   必须在 [data-md-color-scheme] 作用域内定义（Material 的变量定义在此，同特异性下后加载者胜） */
+[data-md-color-scheme="default"] {
   --md-primary-fg-color: #3a8262;
   --md-primary-fg-color--light: #4a9674;
   --md-primary-fg-color--dark: #2e6a50;
