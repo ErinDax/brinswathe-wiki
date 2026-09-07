@@ -55,8 +55,8 @@ nav:
     - 杀手中立阵营:
       - 赎罪者: roles/killer-neutral/penitent.md
       - 恐怖分子: roles/killer-neutral/terrorist.md
+      - 梦魇: roles/killer-neutral/nightmare.md
     - 独立中立阵营:
-      - 梦魇: roles/independent-neutral/nightmare.md
       - 狂战士: roles/independent-neutral/berserker.md
       - 代偿者: roles/independent-neutral/compensator.md
       - 赌徒: roles/independent-neutral/gambler.md
