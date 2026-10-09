@@ -32,6 +32,7 @@ plugins:
   - search
 
 nav:
+  - 更新内容: changelog.md
   - 简介: index.md
   - 角色:
     - 平民阵营:
@@ -64,4 +65,3 @@ nav:
     - 可配置项: config.md
     - 命令: commands.md
     - 机制: mechanisms.md
-  - 更新内容: changelog.md
