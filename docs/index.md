@@ -17,7 +17,6 @@
 
 | 页面 | 内容 |
 |---|---|
-| [模组简介](about.md) | b-w 是什么、模组构成、依赖关系 |
 | [角色](roles.md) | 25 角色总览（能力/商店/机制）|
 | [词条](modifiers.md) | 词条（modifier）说明 |
 | [配置](config.md) | BrinConfig 全部配置项 |
