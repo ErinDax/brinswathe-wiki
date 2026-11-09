@@ -38,14 +38,14 @@ nav:
     - 平民阵营:
       - 替身演员: roles/civilian/stunt_double.md
       - 灵媒: roles/civilian/medium.md
-      - 合谋者: roles/civilian/eavesdropper.md
+      - 合谋者: roles/civilian/conspirator.md
       - 生存专家: roles/civilian/watchman.md
       - 档案员: roles/civilian/archivist.md
       - 复仇者: roles/civilian/avenger.md
       - 变态: roles/civilian/stalker.md
       - 牛仔: roles/civilian/cowboy.md
-      - 瓦伦西娜: roles/civilian/valencina.md
-      - 安检员: roles/civilian/security_checker.md
+      - 瓦伦西娜: roles/civilian/valentina.md
+      - 安检员: roles/civilian/inspector.md
     - 杀手阵营:
       - 傀儡师: roles/killer/puppeteer.md
       - 捕兽者: roles/killer/beast_trapper.md
@@ -63,7 +63,7 @@ nav:
       - 狂战士: roles/independent-neutral/berserker.md
       - 代偿者: roles/independent-neutral/compensator.md
       - 赌徒: roles/independent-neutral/gambler.md
-      - 策反者: roles/independent-neutral/conspirator.md
+      - 策反者: roles/independent-neutral/subverter.md
   - 词条: modifiers.md
   - 配置:
     - 可配置项: config.md

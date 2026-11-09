@@ -30,6 +30,6 @@
 
 ## 内容来源与许可
 
-- 角色/机制内容整理自 **brinswathe**（MIT License，© 2026 百家）
+- 角色/机制内容整理自 **brinswathe**（GPL-2.0，© 2026 百家）
 - wathe 相关机制为描述性整理，未复制原版文本（wathe © 2024 doctor4t，All Rights Reserved）
 - 本百科 © 2026 ErinDax，以 [CC BY-SA 4.0](LICENSE) 许可发布

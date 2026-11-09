@@ -1,12 +1,37 @@
 # 商店
 
-角色专属商店（`BrinShopAccess`）——在 wathe 通用商店基础上按角色定制/新增条目。
+角色专属商店（`BrinShopAccess`）——在 wathe 通用商店基础上按角色定制或新增条目。价格均为配置默认值，可在 `roles.<roleId>.shop_prices` 与各角色专属字段中修改。
 
-!!! note "建设中"
-    已确认条目（源码提取）：
+## 通用定价
 
-    - **傀儡师**：自毁装置（`puppeteerSelfDestruct`，价格 `BrinConfig.puppeteerSelfDestructPrice()`）——武装后傀儡脱离控制时在傀儡位置引发爆炸（3×3×3，范围内直接击杀）
-    - **赎罪者**：身份提示（`penitentIdentityHint`，`penitentIdentityHintPrice`）+ 解毒剂（`penitentAntidote`，`penitentAntidotePrice`，Type.POISON）
-    - **炸弹客**：炸弹（`BomberBombShopEntry`）+ 手雷重定价（`bomberGrenadePrice`）
-    - **通用重定价**：各角色 `shopPrice(roleId, ShopItem.KNIFE/REVOLVER/PSYCHO_MODE)`（刀/左轮/疯魔按角色定制价格）
-    - 撬锁器 50、撬棍 25（等 wathe 通用工具）
+| 物品 | 说明 | 默认 |
+|---|---|---|
+| 刀 `shop_prices.knife` | 杀手/中立角色按需定价 | 100–150（视角色）|
+| 左轮 `shop_prices.revolver` | 平民 350、杀手 300、狙击手 225、灵媒 500 | 见角色 |
+| 疯魔 `shop_prices.psycho_mode` | 狂战士 800，其余 300 | 见角色 |
+| 撬锁器 / 撬棍 | wathe 通用工具 | 50 / 25 |
+
+## 角色专属条目
+
+| 角色 | 条目 | 价格 | 效果 |
+|---|---|---|---|
+| **傀儡师** `puppeteer` | 自毁装置 | 350 | 武装后傀儡脱离控制时，在傀儡位置引发爆炸：**4×4×4**，范围内玩家直接击杀，**无视护盾** |
+| **赎罪者** `penitent` | 身份提示 | 150 | 提示目标身份 |
+| | 解毒剂 | 100 | 解除中毒（**购买后立即生效**）|
+| **炸弹客** `bomber` | 手雷 | 200 | 无法买刀，手雷重定价 |
+| | 炸弹 | 75 | 贴人到他人身上，45 秒引信、30 秒前预警 |
+| | 地雷 | 125 | 脚下放置，踩中定身，移动即爆 |
+| **捕兽者** `beast_trapper` | 额外捕兽夹 | 150 | 购买后无视陷阱数量上限，直接在脚下放置 |
+| **拾骨师** `boneharvester` | 剔骨刀 | 175 | 与有骨头的尸体交互，取下骨头获得护盾（冷却 200 秒）|
+| **张师** `zhangshi` | 雪兹 | 150 | 吃掉后立刻使用技能（无视冷却与花费），冷却 200 秒 |
+| **狂战士** `berserker` | 疯魔 | 800 | 无限疯魔模式 |
+
+## 各角色能力价格
+
+各角色的主动技能花费见 [可配置项](config.md) 中的 `skill_cost` 列。
+
+## 不可购买的例外
+
+- **炸弹客** `bomber`：无法购买刀
+- **恐怖分子** `terrorist`：左轮商店关闭（`revolver_shop_enabled = false`）
+- **多数平民角色**：左轮商店默认关闭（`revolverShopEnabled = false`），义警等角色需在配置中单独开启
