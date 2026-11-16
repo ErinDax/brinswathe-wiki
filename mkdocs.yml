@@ -46,6 +46,7 @@ nav:
       - 牛仔: roles/civilian/cowboy.md
       - 瓦伦西娜: roles/civilian/valentina.md
       - 安检员: roles/civilian/inspector.md
+      - 坠姆: roles/civilian/zhuimu.md
     - 杀手阵营:
       - 傀儡师: roles/killer/puppeteer.md
       - 捕兽者: roles/killer/beast_trapper.md
@@ -55,6 +56,8 @@ nav:
       - 炸弹客: roles/killer/bomber.md
       - 张师: roles/killer/zhangshi.md
       - 入殓师: roles/killer/mortician.md
+      - 钩锁师: roles/killer/grappler.md
+      - 半灵体: roles/killer/half_spirit.md
     - 杀手中立阵营:
       - 赎罪者: roles/killer-neutral/penitent.md
       - 恐怖分子: roles/killer-neutral/terrorist.md
@@ -64,6 +67,7 @@ nav:
       - 代偿者: roles/independent-neutral/compensator.md
       - 赌徒: roles/independent-neutral/gambler.md
       - 策反者: roles/independent-neutral/subverter.md
+      - 间谍: roles/independent-neutral/spy.md
   - 词条: modifiers.md
   - 配置:
     - 可配置项: config.md

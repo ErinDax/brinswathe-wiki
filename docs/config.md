@@ -1,7 +1,7 @@
 # 配置
 
 配置文件：**`config/brinswathe.json5`**（旧版 `brinswathe.json` 会在首次启动时自动迁移）。
-配置类：`cn.erindax.brinswathe.config.BrinConfig`，当前 `config_version = 48`（版本低于当前的旧配置会自动迁移新的默认值）。
+配置类：`cn.erindax.brinswathe.config.ModConfig`，可调参数默认值集中在 `cn.erindax.brinswathe.config.Tunable`；当前 `config_version = 58`（版本低于当前的旧配置会自动迁移新的默认值）。
 
 修改后可用 `/brinswathe reload` 在游戏内热重载，无需重启服务器。
 
@@ -48,7 +48,7 @@
 
 | 角色 | `skill_cost` | 冷却 | 持续 | 商店价格 | 专属字段 |
 |---|---|---|---|---|---|
-| 傀儡师 `puppeteer` | 0 | 200 | 60 | 150 / 300 / 300 | `self_destruct_price` 350、`return_cooldown_seconds` 60、`particle_delay_seconds` 45 |
+| 傀儡师 `puppeteer` | 0 | 200 | 60 | 100 / 300 / 300 | `self_destruct_price` 350、`self_destruct_range` 2、`return_cooldown_seconds` 60、`particle_delay_seconds` 45、`exposed_glow_seconds` 10、`killed_slowness_seconds` 15 |
 | 替身演员 `stunt_double` | 0 | 30 | 30 | 100 / 350 / 300 | — |
 | 灵媒 `medium` | 200 | 120 | 8 | 100 / 500 / 300 | — |
 | 合谋者 `conspirator` | 150 | 200 | 15 | 100 / 350 / 300 | — |
@@ -72,6 +72,10 @@
 | 恐怖分子 `terrorist` | 0 | 0 | 0 | 100 / 300 / 300 | `explosion_range` 5、`explosion_survival_kills` 4、`revolver_shop_enabled` false |
 | 入殓师 `mortician` | 0 | 100 | 5 | 100 / 300 / 300 | — |
 | 张师 `zhangshi` | 0 | 90 | 10 | 100 / 300 / 300 | `xuezi_price` 150、`xuezi_cooldown_seconds` 200、`xuezi_shield_layers` 1、`run_speed` 2.0 |
+| 坠姆 `zhuimu` | 350 | — | — | 平民默认 | `struggle_presses` 20、`axe_hits` 3、`axe_cooldown_seconds` 0.5 |
+| 钩锁师 `grappler` | 0 | 90 | 2 | 100 / 300 / 300 | `hook_range` 16（范围 1–32）|
+| 半灵体 `half_spirit` | 0 | 120 | — | 100 / 300 / 300 | — |
+| 间谍 `spy` | — | — | — | 中立默认 | `correct_cooldown_seconds` 25、`wrong_cooldown_seconds` 120、`max_wrong_guesses` 2、`required_divisor` 2、`required_reduction` 1 |
 
 > 说明：表中「—」表示该角色无此配置项；狙击手冷却 100000 为「开局不可用」的实现方式（需完成任务恢复）。
 
