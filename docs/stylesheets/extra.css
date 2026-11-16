@@ -1,10 +1,280 @@
-/* Brin's Wathe Wiki —— 主题色改为绿色 #3a8262（覆盖 Material 默认蓝色 indigo）
-   必须在 [data-md-color-scheme] 作用域内定义（Material 的变量定义在此，同特异性下后加载者胜） */
-[data-md-color-scheme="default"] {
-  --md-primary-fg-color: #3a8262;
-  --md-primary-fg-color--light: #4a9674;
-  --md-primary-fg-color--dark: #2e6a50;
-  --md-accent-fg-color: #3a8262;
-  --md-accent-fg-color--transparent: rgba(58, 130, 98, 0.15);
-  --md-typeset-a-color: #2e6a50;
+/* ==========================================================================
+   Brin's Wathe 百科 · Ore UI 主题
+   设计 token 取自 Oriel UI（Rinorsi/Oriel-UI）的 kit/.../ui/ore.css
+   —— 对齐基岩版 Ore UI 的像素斜角风格：无圆角、硬阴影、底部加厚边框
+   ========================================================================== */
+
+:root {
+  /* 绿色系 */
+  --ore-green-1: #a0e081; --ore-green-2: #86d562; --ore-green-3: #6cc349; --ore-green-4: #52a535;
+  --ore-green: #3c8527;   --ore-green-6: #2a641c; --ore-green-7: #1d4d13;
+  /* 灰色阶 */
+  --ore-gray-0: #f4f6f9;  --ore-gray-1: #ecedee;  --ore-gray-2: #d0d1d4; --ore-gray-3: #b1b2b5;
+  --ore-gray-4: #8c8d90;  --ore-gray-5: #58585a;  --ore-gray-6: #48494a; --ore-gray-7: #3a3b3c;
+  /* 表面与墨色 */
+  --ore-surface-1: #313233; --ore-surface-2: #242425; --ore-surface-3: #1e1e1f; --ore-ink: #0f0f10;
+  /* 强调色 */
+  --ore-red: #ca3636; --ore-red-light: #e25a5a; --ore-gold: #f8af2b; --ore-yellow: #e5c317;
+  --ore-orange: #d3791f; --ore-blue: #2e6be5; --ore-purple: #7345e5;
+  /* 文字 */
+  --ore-text: #ffffff; --ore-text-dim: #b1b2b5; --ore-text-faint: #8c8d90; --ore-text-dark: #1e1e1f;
+  /* 动效 */
+  --ore-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ore-fast: 0.08s; --ore-medium: 0.18s; --ore-slow: 0.32s;
+  /* 像素立体：内高光 + 内暗边（模拟 texel 斜角） */
+  --ore-bevel: inset 2px 2px 0 rgba(255,255,255,.12), inset -2px -2px 0 rgba(0,0,0,.38);
+  --ore-dropshadow: 0 3px 0 rgba(0,0,0,.45);
+}
+
+/* ---------- Material 变量覆盖（深色 Ore 底） ---------- */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: var(--ore-surface-3);
+  --md-default-fg-color: var(--ore-text);
+  --md-default-fg-color--light: var(--ore-text-dim);
+  --md-default-fg-color--lighter: var(--ore-text-faint);
+  --md-primary-fg-color: var(--ore-green);
+  --md-primary-fg-color--light: var(--ore-green-4);
+  --md-primary-fg-color--dark: var(--ore-green-6);
+  --md-primary-bg-color: var(--ore-text);
+  --md-accent-fg-color: var(--ore-green-3);
+  --md-accent-fg-color--transparent: rgba(108,195,73,.12);
+  --md-typeset-color: var(--ore-text);
+  --md-typeset-a-color: var(--ore-green-3);
+  --md-code-bg-color: var(--ore-ink);
+  --md-code-fg-color: var(--ore-gray-1);
+  --md-typeset-table-color: var(--ore-gray-6);
+  --md-footer-bg-color: var(--ore-ink);
+  --md-footer-bg-color--dark: #000;
+}
+
+/* ---------- 全局 ---------- */
+body {
+  background-color: var(--ore-surface-3);
+  background-image:
+    linear-gradient(rgba(255,255,255,.014) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.014) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.md-typeset { line-height: 1.7; }
+
+/* ---------- 顶栏：绿色 + 底边像素阴影 ---------- */
+.md-header {
+  background: linear-gradient(180deg, var(--ore-green-4) 0%, var(--ore-green) 55%, var(--ore-green-6) 100%);
+  box-shadow: var(--ore-dropshadow), inset 0 2px 0 rgba(255,255,255,.18);
+  border-bottom: 2px solid var(--ore-green-7);
+}
+.md-header__title { font-weight: 700; letter-spacing: .3px; }
+.md-tabs { background: var(--ore-green-6); box-shadow: 0 2px 0 rgba(0,0,0,.35); }
+
+/* ---------- 侧边栏导航 ---------- */
+.md-sidebar__scrollwrap { background: transparent; }
+.md-nav__link {
+  border-radius: 0;
+  padding: 2px 6px;
+  transition: color var(--ore-fast) var(--ore-ease), background var(--ore-fast) var(--ore-ease);
+}
+.md-nav__link:hover { color: var(--ore-green-2); background: var(--ore-surface-2); }
+.md-nav__link--active,
+.md-nav__item .md-nav__link--active {
+  color: var(--ore-green-3) !important;
+  background: var(--ore-surface-2);
+  box-shadow: inset 3px 0 0 var(--ore-green-4);
+  font-weight: 700;
+}
+.md-nav__title { color: var(--ore-text-dim); font-weight: 700; }
+.md-nav--primary .md-nav__item--section > .md-nav__link { color: var(--ore-gold); }
+
+/* ---------- 标题 ---------- */
+.md-typeset h1 {
+  color: var(--ore-text);
+  font-weight: 800;
+  padding-bottom: .3em;
+  border-bottom: 2px solid var(--ore-green);
+  box-shadow: 0 3px 0 rgba(0,0,0,.35);
+  margin-bottom: 1.2em;
+  letter-spacing: .5px;
+}
+.md-typeset h1::before {
+  content: "";
+  display: inline-block;
+  width: 10px; height: 18px;
+  margin-right: 10px;
+  background: var(--ore-green-3);
+  box-shadow: var(--ore-bevel);
+  vertical-align: -2px;
+}
+.md-typeset h2 {
+  color: var(--ore-green-2);
+  font-weight: 700;
+  padding-left: 12px;
+  border-left: 4px solid var(--ore-green-4);
+  box-shadow: -4px 0 0 rgba(0,0,0,.25);
+  margin-top: 2em;
+}
+.md-typeset h3 { color: var(--ore-gold); font-weight: 700; }
+.md-typeset h4 { color: var(--ore-gray-1); }
+
+/* ---------- 链接 ---------- */
+.md-typeset a {
+  color: var(--ore-green-3);
+  border-bottom: 1px solid transparent;
+  transition: color var(--ore-fast) var(--ore-ease), border-color var(--ore-fast) var(--ore-ease);
+}
+.md-typeset a:hover { color: var(--ore-gold); border-bottom-color: var(--ore-gold); }
+.md-typeset a:focus { outline: 2px solid var(--ore-gold); outline-offset: 2px; }
+
+/* ---------- 表格：像素网格 ---------- */
+.md-typeset table:not([class]) {
+  border: 2px solid var(--ore-gray-6);
+  box-shadow: var(--ore-dropshadow);
+  background: var(--ore-surface-2);
+  font-size: .78rem;
+}
+.md-typeset table:not([class]) th {
+  background: linear-gradient(180deg, var(--ore-green-4) 0%, var(--ore-green) 100%);
+  color: var(--ore-text);
+  font-weight: 700;
+  border-bottom: 2px solid var(--ore-green-7);
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.15);
+  padding: .6em .8em;
+  white-space: nowrap;
+}
+.md-typeset table:not([class]) td {
+  border-top: 1px solid var(--ore-gray-7);
+  border-right: 1px solid var(--ore-gray-7);
+  padding: .55em .8em;
+  color: var(--ore-text);
+}
+.md-typeset table:not([class]) tr:nth-child(even) td { background: rgba(255,255,255,.025); }
+.md-typeset table:not([class]) tr:hover td { background: rgba(108,195,73,.10); }
+
+/* ---------- 行内代码：金色标签 ---------- */
+.md-typeset code {
+  background: var(--ore-ink);
+  color: var(--ore-gold);
+  border: 1px solid var(--ore-gray-6);
+  border-radius: 0;
+  padding: .1em .35em;
+  font-size: .84em;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.5);
+}
+.md-typeset a code { color: var(--ore-green-2); }
+
+/* ---------- 代码块 ---------- */
+.md-typeset pre > code,
+.md-typeset .highlight code {
+  border: 2px solid var(--ore-gray-6);
+  border-left: 4px solid var(--ore-green-4);
+  box-shadow: var(--ore-dropshadow);
+  background: var(--ore-ink);
+  color: var(--ore-gray-1);
+}
+
+/* ---------- 提示框（admonition）：像素卡片 ---------- */
+.md-typeset .admonition,
+.md-typeset details {
+  border: 2px solid var(--ore-gray-6);
+  border-left-width: 6px;
+  border-radius: 0;
+  box-shadow: var(--ore-dropshadow);
+  background: var(--ore-surface-2);
+  font-size: .78rem;
+}
+.md-typeset .admonition-title,
+.md-typeset summary {
+  border-radius: 0;
+  font-weight: 700;
+  background: var(--ore-surface-1) !important;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,.35);
+  padding: .6em .8em;
+}
+.md-typeset .admonition-title::before,
+.md-typeset summary::before { background-color: currentColor; }
+
+.md-typeset .admonition.note,      .md-typeset details.note      { border-left-color: var(--ore-blue); }
+.md-typeset .admonition.note > .admonition-title { color: var(--ore-blue); }
+.md-typeset .admonition.tip,       .md-typeset details.tip       { border-left-color: var(--ore-green-3); }
+.md-typeset .admonition.tip > .admonition-title { color: var(--ore-green-2); }
+.md-typeset .admonition.info,      .md-typeset details.info      { border-left-color: var(--ore-green-4); }
+.md-typeset .admonition.info > .admonition-title { color: var(--ore-green-2); }
+.md-typeset .admonition.warning,   .md-typeset details.warning   { border-left-color: var(--ore-orange); }
+.md-typeset .admonition.warning > .admonition-title { color: var(--ore-gold); }
+.md-typeset .admonition.danger,    .md-typeset details.danger    { border-left-color: var(--ore-red); }
+.md-typeset .admonition.danger > .admonition-title { color: var(--ore-red-light); }
+.md-typeset .admonition.example,   .md-typeset details.example   { border-left-color: var(--ore-purple); }
+.md-typeset .admonition.example > .admonition-title { color: #a98bf0; }
+
+/* ---------- 引用块：左侧绿条 ---------- */
+.md-typeset blockquote {
+  border-left: 4px solid var(--ore-green-4);
+  background: var(--ore-surface-2);
+  color: var(--ore-text-dim);
+  box-shadow: var(--ore-dropshadow);
+  padding: .6em 1em;
+}
+
+/* ---------- 列表：方块标记 ---------- */
+.md-typeset ul > li::marker { color: var(--ore-green-3); }
+.md-typeset ol > li::marker { color: var(--ore-gold); font-weight: 700; }
+
+/* ---------- 分隔线：刻线效果 ---------- */
+.md-typeset hr {
+  border: none;
+  height: 1px;
+  background: var(--ore-surface-3);
+  box-shadow: 0 1px 0 var(--ore-gray-6);
+  margin: 2em 0;
+}
+
+/* ---------- 粗体与强调 ---------- */
+.md-typeset strong { color: #fff; font-weight: 700; }
+.md-typeset em { color: var(--ore-gray-2); }
+.md-typeset mark { background: var(--ore-gold); color: var(--ore-text-dark); padding: 0 .2em; }
+
+/* ---------- 搜索框 ---------- */
+.md-search__form {
+  background: var(--ore-surface-2);
+  border: 2px solid var(--ore-gray-6);
+  border-radius: 0;
+  box-shadow: inset 0 2px 0 rgba(0,0,0,.35);
+}
+.md-search__form:focus-within { border-color: var(--ore-green-4); }
+.md-search__input { color: var(--ore-text); }
+
+/* ---------- 页脚 ---------- */
+.md-footer { background: var(--ore-ink); border-top: 2px solid var(--ore-gray-7); }
+.md-footer-meta { background: #000; }
+
+/* ---------- 滚动条：像素风 ---------- */
+* { scrollbar-width: thin; scrollbar-color: var(--ore-gray-6) var(--ore-surface-3); }
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: var(--ore-surface-3); }
+::-webkit-scrollbar-thumb {
+  background: var(--ore-gray-6);
+  border: 2px solid var(--ore-surface-3);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--ore-green-4); }
+
+/* ---------- 内容区卡片感 ---------- */
+.md-content__inner { padding-bottom: 2rem; }
+.md-typeset .md-button {
+  border-radius: 0;
+  border: 2px solid var(--ore-green-6);
+  background: linear-gradient(180deg, var(--ore-green-4), var(--ore-green));
+  color: #fff;
+  box-shadow: var(--ore-bevel), var(--ore-dropshadow);
+  font-weight: 700;
+  padding: .45em 1.2em;
+}
+.md-typeset .md-button:hover {
+  background: linear-gradient(180deg, var(--ore-green-3), var(--ore-green-4));
+  color: #fff;
+  transform: translateY(1px);
+  box-shadow: var(--ore-bevel), 0 2px 0 rgba(0,0,0,.45);
+}
+
+/* ---------- 可访问性：减少动效 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
 }
